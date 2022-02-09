@@ -11,22 +11,21 @@ class groupController {
             const data = await Ipdb.find({
                 "post": post
             })
-            console.log(data)
 
-            // if (data) {
-            //     let sum = 0;
-            //     data.map((item) => {
-            //         sum += item.sl;
-            //     });
-            //     res.status(201).send({
-            //         sum,
-            //         mess: "Thành công"
-            //     })
-            // } else {
-            //     res.status(404).send({
-            //         mess: "Thất bại"
-            //     })
-            // }
+            if (data) {
+                let sum = 0;
+                data.map((item) => {
+                    sum += item.sl;
+                });
+                res.status(201).send({
+                    sum,
+                    mess: "Thành công"
+                })
+            } else {
+                res.status(404).send({
+                    mess: "Thất bại"
+                })
+            }
 
         } catch (error) {
             res.status(500).send({
