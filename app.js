@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const config = require("./DB.js");
 const groupRouter = require("./routers/group");
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB, {
@@ -31,5 +31,5 @@ app.use(bodyParser.json());
 app.use(groupRouter);
 
 app.listen(port, () => {
-    console.log("Started at 4000");
+    console.log("Started at 3000");
 });
